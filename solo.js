@@ -190,13 +190,31 @@ values: [3, 3, 4]
 /* EXERCISE 9
 
 Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
-
+function howManyDays(date) {
+  
+  
+    return Math.floor((new Date() - date)/(1000*60*60*24))
+  }
+  console.log("Days passed since given date:",howManyDays(new Date(2022, 11, 01)));
 */
 
 /* EXERCISE 10
 
 Write a function called isTodayMyBirthday which should return true if today’s your birthday, false otherwise.
+function isTodayMyBirthday(date){
+    let today=new Date();
+    let myBirthday=("02/07/1997");
+    if(today.getDate()===myBirthday.getDate() && today.getMonth()===myBirthday.getMonth()){
+        return true;
+    }
+    else {
+    return false;
+    }
 
+
+}
+
+console.log(isTodayMyBirthday());
 */
 
 // JS Arrays & Objects
@@ -406,6 +424,17 @@ halfTree(3)
 
 ***
 
+function halfTree(n){
+  let htree="";
+    for(i=1;i<=n;i++){
+        for(j=1;j<=i;j++){
+            htree=htree+"*";
+        }
+        htree=htree+"\n";
+    }
+    return htree;
+}
+console.log(halfTree(3));
 */
 
 /* EXERCISE 22
@@ -427,6 +456,28 @@ tree(3)
 /* EXERCISE 23
 
 Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
+let isPrime=true;
+function isItPrime(n)
+{
+    if(n===1){
+        return "1 is neither prime nor composite";
+    }
+    else{
+        for (let i = 2; i < n; i++) 
+        {
+            if (n % i == 0) {
+                isPrime = false;
+                break;
+            }
+            else{
+                isPrime=true;
+            }
+
+         }
+        }
+return isPrime
+}
+console.log(isItPrime(17));
 
 */
 
